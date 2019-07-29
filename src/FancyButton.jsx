@@ -1,9 +1,11 @@
 import React from 'react'
+import logProps from "./logProps";
 
-const FancyButton = props => (
-  <button className="FancyButton">
-    {props.children}
-  </button>
-)
+const FancyButton = React.forwardRef((props, ref) => {
+  return (
+    <button ref={ref} className="FancyButton">
+      {props.children}
+    </button>)
+})
 
-export default FancyButton
+export default logProps(FancyButton)
